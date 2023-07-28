@@ -6,4 +6,4 @@ For implementation view the protocol documentation that explanes the required HT
 
 
 ### Acknowledgment
-This research paper is funded by dtec.bw – Digitalization and Technology Research Center of the Bundeswehr which we gratefully acknowledge. dtec.bw is funded by the European Union – NextGenerationEU.
+This work originates from the LIONS research project. LIONS is funded by dtec.bw –- Digitalization and Technology Research Center of the Bundeswehr, which we gratefully acknowledge. dtec.bw is funded by the European Union –- NextGenerationEU.
