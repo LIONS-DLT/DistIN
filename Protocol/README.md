@@ -12,7 +12,7 @@
 
 # Actions
 
-### ~/DistIN/attribute
+### [GET] ~/DistIN/attribute
 Request:
 ~~~
 {
@@ -33,7 +33,7 @@ Response:
 }
 ~~~
 
-### ~/DistIN/signAttribute
+### [POST] ~/DistIN/signAttribute
 Request:
 ~~~
 {
@@ -48,7 +48,7 @@ Response:
 { }
 ~~~
 
-### ~/DistIN/verifyService
+### [GET] ~/DistIN/verifyService
 Request:
 ~~~
 {
