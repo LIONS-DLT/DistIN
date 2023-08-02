@@ -1,6 +1,16 @@
-# DistIN Protocol Documentation
+## DistIN Protocol Documentation
 
-## Actions
+# Objects
+
+### AttributeSignatureReference
+~~~
+{
+  id: "bob@id.example.org",
+  signatureId: "hdywbecfxztefwynezuxuevuw"
+}
+~~~
+
+# Actions
 
 ### ~/DistIN/attribute
 Request:
@@ -19,7 +29,7 @@ Response:
   attributeId: "ndi3xmjoixyjeu42cnhfiwjd32mh3xhf",
   attributeName: "lastName",
   attributeValue: "Peterson",
-  signatures: [{ id: "bob@id.example.org", signatureId: "hdywbecfxztefwynezuxuevuw" }]
+  signatures: [<AttributeSignatureReference>, ...]
 }
 ~~~
 
@@ -38,3 +48,17 @@ Response:
 { }
 ~~~
 
+### ~/DistIN/verifyService
+Request:
+~~~
+{
+  service: "id.example.org"
+}
+~~~
+Response:
+~~~
+{
+  isValid: true,
+  type: "DNS" // valid values: "DNS" or "BLOCKCHAIN"
+}
+~~~
