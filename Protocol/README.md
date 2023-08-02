@@ -1,31 +1,20 @@
-## DistIN Protocol Documentation
+## DistIN Protocol Documentation - restful API
 
-# Objects
+# HTTP Header Parameters
 
-### AttributeSignatureReference
-~~~
-{
-  id: "bob@id.example.org",
-  signatureId: "hdywbecfxztefwynezuxuevuw"
-}
-~~~
+### POST Request Headers
+- **DistIN-ID**: The ID of the requesting identity
+- **DistIN-Signature**: The signature of the body by the requesting identity
 
-# Actions
+### Response Header
+- **DistIN-Signature**: The signature of the body by the service
 
-### [GET] ~/DistIN/attribute
-Request:
+# JSON Objects
+
+### Attribute
 ~~~
 {
   id: "alice@id.example.org",
-  // for public attributes:
-  attributeName: "lastName"
-  // or for private attributes:
-  attributeId: "ndi3xmjoixyjeu42cnhfiwjd32mh3xhf"
-}
-~~~
-Response:
-~~~
-{
   attributeId: "ndi3xmjoixyjeu42cnhfiwjd32mh3xhf",
   attributeName: "lastName",
   attributeValue: "Peterson",
@@ -33,8 +22,53 @@ Response:
 }
 ~~~
 
-### [POST] ~/DistIN/signAttribute
-Request:
+### AttributeSignatureReference
+~~~
+{
+  id: "alice@id.example.org",
+  attributeId: "ndi3xmjoixyjeu42cnhfiwjd32mh3xhf",
+  signerId: "bob@id.example.org",
+  signatureId: "hdywbecfxztefwynezuxuevuw"
+}
+~~~
+
+### AttributeSignature
+~~~
+{
+  id: "alice@id.example.org",
+  attributeId: "ndi3xmjoixyjeu42cnhfiwjd32mh3xhf",
+  signerId: "bob@id.example.org",
+  date: "2023/01/30",
+  signature: "<---BASE64--->"
+}
+~~~
+
+# Actions
+
+### [GET] ~/DistIN/attribute
+Request URL:
+~~~
+~/DistIN/attribute?id=alice@id.example.org&attributeName=lastName
+or
+~/DistIN/attribute?id=alice@id.example.org&attributeId=ndi3xmjoixyjeu42cnhfiwjd32mh3xhf
+~~~
+Response (Attribute):
+~~~
+{
+  id: "alice@id.example.org",
+  attributeId: "ndi3xmjoixyjeu42cnhfiwjd32mh3xhf",
+  attributeName: "lastName",
+  attributeValue: "Peterson",
+  signatures: [<AttributeSignatureReference>, ...]
+}
+~~~
+
+### [POST] ~/DistIN/attributeSignatureReference
+Request URL:
+~~~
+~/DistIN/attribute
+~~~
+Request Body (AttributeSignatureReference):
 ~~~
 {
   id: "alice@id.example.org",
@@ -48,12 +82,10 @@ Response:
 { }
 ~~~
 
-### [GET] ~/DistIN/verifyService
+### [GET] ~/DistIN/serviceVerificationState
 Request:
 ~~~
-{
-  service: "id.example.org"
-}
+~/DistIN/serviceVerificationState?service=id.example.org
 ~~~
 Response:
 ~~~
