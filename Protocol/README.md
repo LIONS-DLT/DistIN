@@ -14,10 +14,10 @@
 ### Attribute
 ~~~
 {
-  id: "alice@id.example.org",
-  attributeId: "ndi3xmjoixyjeu42cnhfiwjd32mh3xhf",
-  attributeName: "lastName",
-  attributeValue: "Peterson",
+  id: "ndi3xmjoixyjeu42cnhfiwjd32mh3xhf",
+  identity: "alice@id.example.org",
+  name: "lastName",
+  value: "Peterson",
   signatures: [<AttributeSignatureReference>, ...]
 }
 ~~~
@@ -25,19 +25,20 @@
 ### AttributeSignatureReference
 ~~~
 {
-  id: "alice@id.example.org",
-  attributeId: "ndi3xmjoixyjeu42cnhfiwjd32mh3xhf",
-  signerId: "bob@id.example.org",
-  signatureId: "hdywbecfxztefwynezuxuevuw"
+  identity: "alice@id.example.org",
+  attribute: "ndi3xmjoixyjeu42cnhfiwjd32mh3xhf",
+  signer: "bob@id.example.org",
+  signature: "hdywbecfxztefwynezuxuevuw"
 }
 ~~~
 
 ### AttributeSignature
 ~~~
 {
-  id: "alice@id.example.org",
-  attributeId: "ndi3xmjoixyjeu42cnhfiwjd32mh3xhf",
-  signerId: "bob@id.example.org",
+  id: "hdywbecfxztefwynezuxuevuw"
+  identity: "alice@id.example.org",
+  attribute: "ndi3xmjoixyjeu42cnhfiwjd32mh3xhf",
+  signer: "bob@id.example.org",
   date: "2023/01/30",
   signature: "<---BASE64--->"
 }
@@ -55,10 +56,10 @@ or
 Response (Attribute):
 ~~~
 {
-  id: "alice@id.example.org",
-  attributeId: "ndi3xmjoixyjeu42cnhfiwjd32mh3xhf",
-  attributeName: "lastName",
-  attributeValue: "Peterson",
+  id: "ndi3xmjoixyjeu42cnhfiwjd32mh3xhf",
+  identity: "alice@id.example.org",
+  name: "lastName",
+  value: "Peterson",
   signatures: [<AttributeSignatureReference>, ...]
 }
 ~~~
@@ -71,10 +72,10 @@ Request URL:
 Request Body (AttributeSignatureReference):
 ~~~
 {
-  id: "alice@id.example.org",
-  attributeId: "ndi3xmjoixyjeu42cnhfiwjd32mh3xhf",
-  signerId: "bob@id.example.org",
-  signatureId: "hdywbecfxztefwynezuxuevuw"
+  identity: "alice@id.example.org",
+  attribute: "ndi3xmjoixyjeu42cnhfiwjd32mh3xhf",
+  signer: "bob@id.example.org",
+  signature: "hdywbecfxztefwynezuxuevuw"
 }
 ~~~
 Response:
@@ -90,7 +91,7 @@ Request:
 Response:
 ~~~
 {
-  isValid: true,
+  valid: true,
   type: "DNS" // valid values: "DNS" or "BLOCKCHAIN"
 }
 ~~~
