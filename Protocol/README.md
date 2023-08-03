@@ -5,6 +5,7 @@
 ### POST Request Headers
 - **DistIN-ID**: The ID of the requesting identity
 - **DistIN-Signature**: The signature of the body by the requesting identity
+- **DistIN-Token**: The token issued to the requesting identity by the service
 
 ### Response Header
 - **DistIN-Signature**: The signature of the body by the service
