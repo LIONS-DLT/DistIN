@@ -29,6 +29,7 @@
   id: "ndi3xmjoixyjeu42cnhfiwjd32mh3xhf",
   identity: "alice@id.example.org",
   name: "lastName",
+  mimeType: "text/plain",
   value: "Peterson",
   signatures: [<AttributeSignatureReference>, ...]
 }
