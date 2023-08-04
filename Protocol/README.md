@@ -17,6 +17,7 @@
 {
   identity: "alice@id.example.org",
   key: "<---BASE64--->",
+  algorithm : "DILITHIUM",
   date: "2023/01/30",
   signature: "<---BASE64--->"
 }
