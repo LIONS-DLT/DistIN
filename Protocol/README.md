@@ -30,7 +30,7 @@ DistIN objects are resource objects targeted by the REST API.
 
 ## DistIN Actions
 
-DistIN actions are resource location (part of the URL) targeted by the REST API.
+DistIN actions are resource locations (part of the URL) targeted by the REST API.
 
 [-> DistIN Actions](Actions.md)
 
