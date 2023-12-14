@@ -1,3 +1,4 @@
+![DistIN](Art/DistIN_Logo_1024x256px.png)
 # DistIN - Distributed Identity Information Network
 
 The concept for a Distributed Identity Information Network (DistIN) is based on a web-based protocol that can be implemented in existing web applications, but will also be provided as a standalone reference implementation including installation instructions at a later point in time, so that a fully functional application can be set up and used.
