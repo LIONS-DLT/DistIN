@@ -24,5 +24,13 @@ The figure below shows an example where Alice and Bob beling to different servic
 ![DistIN System Architecture](figure_distin_architecturefull.png)
 
 
+## DistIN for Authentication
+
+The DistIN network can be used for authentication and the fugure below shows the communication flow that comes up in this case. From the perpective of the third party application it is only a single web request.
+
+![DistIN Authentication](figure_distin_authentication.png)
+
+
+
 ### Acknowledgment
 This work originates from the LIONS research project. LIONS is funded by dtec.bw –- Digitalization and Technology Research Center of the Bundeswehr, which we gratefully acknowledge. dtec.bw is funded by the European Union –- NextGenerationEU.
