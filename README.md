@@ -10,6 +10,11 @@ For implementation view the protocol documentation that explanes the required HT
 [-> Protocol Documentation](Protocol/README.md)
 
 
+## Prototype
+
+Research in progress...
+
+
 ## General Architecture
 
 The DistIN services play the mayor role inside this identity network. It provides the web application and endpoint for its identitiesand holds a database with the identities' information. The identities only have their authenticator application that contains the private key. This architecture requires a strong trust relationship between service and identity and is primarily ment for organizational context, but also allows a higher decentralization as federated identity systems.
